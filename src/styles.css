@@ -471,13 +471,14 @@ svg[data-tone="gold"] {
 }
 .hdr__menu {
   display: none;
+  gap: var(--s-3);
 }
 @media (max-width: 900px) {
   .hdr__nav {
     display: none;
   }
   .hdr__menu {
-    display: inline-block;
+    display: flex;
     margin-left: auto;
   }
   .hdr__in {
