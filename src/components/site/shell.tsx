@@ -49,7 +49,7 @@ export function Header() {
             Donate
           </Link>
         </nav>
-        <div className="hdr__menu" style={{ display: "flex", gap: "var(--s-3)" }}>
+        <div className="hdr__menu">
           <button className="btn" onClick={() => setOpen((v) => !v)}>
             Menu
           </button>
