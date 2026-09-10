@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BrandRouteImport } from './routes/brand'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ElaineInghamRouteImport } from './routes/elaine-ingham'
@@ -31,6 +32,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandRoute = BrandRouteImport.update({
+  id: '/brand',
+  path: '/brand',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CommunityRoute = CommunityRouteImport.update({
@@ -93,6 +99,7 @@ const ProjectsRanchoCacachilasRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/brand': typeof BrandRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
@@ -108,6 +115,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/brand': typeof BrandRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/brand': typeof BrandRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/brand'
     | '/community'
     | '/donate'
     | '/elaine-ingham'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/brand'
     | '/community'
     | '/donate'
     | '/elaine-ingham'
@@ -171,6 +182,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/brand'
     | '/community'
     | '/donate'
     | '/elaine-ingham'
@@ -187,6 +199,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BrandRoute: typeof BrandRoute
   CommunityRoute: typeof CommunityRoute
   DonateRoute: typeof DonateRoute
   ElaineInghamRoute: typeof ElaineInghamRoute
@@ -214,6 +227,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand': {
+      id: '/brand'
+      path: '/brand'
+      fullPath: '/brand'
+      preLoaderRoute: typeof BrandRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/community': {
@@ -299,6 +319,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BrandRoute: BrandRoute,
   CommunityRoute: CommunityRoute,
   DonateRoute: DonateRoute,
   ElaineInghamRoute: ElaineInghamRoute,
