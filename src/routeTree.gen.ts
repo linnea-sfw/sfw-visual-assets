@@ -17,6 +17,7 @@ import { Route as ElaineInghamRouteImport } from './routes/elaine-ingham'
 import { Route as LearnRouteImport } from './routes/learn'
 import { Route as LibraryRouteImport } from './routes/library'
 import { Route as NowRouteImport } from './routes/now'
+import { Route as PlaygroundRouteImport } from './routes/playground'
 import { Route as ScienceRouteImport } from './routes/science'
 import { Route as WorkshopsRouteImport } from './routes/workshops'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
@@ -62,6 +63,11 @@ const NowRoute = NowRouteImport.update({
   path: '/now',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlaygroundRoute = PlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ScienceRoute = ScienceRouteImport.update({
   id: '/science',
   path: '/science',
@@ -93,6 +99,7 @@ export interface FileRoutesByFullPath {
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
   '/now': typeof NowRoute
+  '/playground': typeof PlaygroundRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByTo {
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
   '/now': typeof NowRoute
+  '/playground': typeof PlaygroundRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -122,6 +130,7 @@ export interface FileRoutesById {
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
   '/now': typeof NowRoute
+  '/playground': typeof PlaygroundRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -138,6 +147,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/library'
     | '/now'
+    | '/playground'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/library'
     | '/now'
+    | '/playground'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/library'
     | '/now'
+    | '/playground'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -181,6 +193,7 @@ export interface RootRouteChildren {
   LearnRoute: typeof LearnRoute
   LibraryRoute: typeof LibraryRoute
   NowRoute: typeof NowRoute
+  PlaygroundRoute: typeof PlaygroundRoute
   ScienceRoute: typeof ScienceRoute
   WorkshopsRoute: typeof WorkshopsRoute
   ProjectsRanchoCacachilasRoute: typeof ProjectsRanchoCacachilasRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/playground': {
+      id: '/playground'
+      path: '/playground'
+      fullPath: '/playground'
+      preLoaderRoute: typeof PlaygroundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/science': {
       id: '/science'
       path: '/science'
@@ -285,6 +305,7 @@ const rootRouteChildren: RootRouteChildren = {
   LearnRoute: LearnRoute,
   LibraryRoute: LibraryRoute,
   NowRoute: NowRoute,
+  PlaygroundRoute: PlaygroundRoute,
   ScienceRoute: ScienceRoute,
   WorkshopsRoute: WorkshopsRoute,
   ProjectsRanchoCacachilasRoute: ProjectsRanchoCacachilasRoute,
