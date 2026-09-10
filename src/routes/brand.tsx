@@ -517,11 +517,12 @@ const CSS = `
 .bd-p-plate{position:relative;aspect-ratio:4/3;overflow:hidden;background:#efe9dc;isolation:isolate;}
 .bd-p-plate--big{aspect-ratio:5/4;}
 .bd-p-i{position:absolute;inset:0;}
-.bd-p-i--a{filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply;}
-.bd-p-i--b{filter:grayscale(1) contrast(1.05) sepia(1) hue-rotate(215deg) saturate(3.2);
-  mix-blend-mode:multiply;opacity:.62;translate:-4px 3px;}
-.bd-p-i--c{filter:grayscale(1) contrast(1.05) sepia(1) hue-rotate(-25deg) saturate(3.4);
-  mix-blend-mode:multiply;opacity:.5;translate:5px -3px;}
+.bd-p-i--a{filter:grayscale(1) sepia(1) hue-rotate(150deg) saturate(2.4) brightness(1.42) contrast(.95);
+  mix-blend-mode:multiply;}
+.bd-p-i--b{filter:grayscale(1) sepia(1) hue-rotate(228deg) saturate(2.6) brightness(1.46) contrast(.92);
+  mix-blend-mode:multiply;translate:-4px 3px;}
+.bd-p-i--c{filter:grayscale(1) sepia(1) hue-rotate(-14deg) saturate(2.8) brightness(1.44) contrast(.92);
+  mix-blend-mode:multiply;translate:5px -3px;}
 .bd-p-i--move{animation:bd-reg 32s ease-in-out infinite alternate;}
 .bd-p-i--move2{animation:bd-reg2 46s ease-in-out infinite alternate;}
 .bd-p-txt h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em;
