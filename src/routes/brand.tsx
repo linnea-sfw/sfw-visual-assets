@@ -819,7 +819,8 @@ const CSS = `
 .hz-weather > span{font-size:.8rem;color:#7a756c;}
 
 /* ---------- 03 FIELD INDEX ---------- */
-.ix-hero{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--ink);}
+.ix-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:0;border:1px solid var(--ink);}
+.ix-hero > *{min-width:0;}
 .ix-hero__im{position:relative;overflow:hidden;min-height:520px;background:#111;}
 .ix-hero__im img{position:absolute;inset:0;width:100%;height:100%;}
 .ix-hero__crop{position:absolute;inset:0;box-shadow:inset 0 0 0 14px #fff;}
