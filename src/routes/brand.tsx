@@ -98,7 +98,7 @@ function Brand() {
             </p>
             <div className="bd-a-cta">
               <a href="#one">Learn to look</a>
-              <span>Since 1986 · taught in over 100 countries</span>
+              <span>Taught in over 100 countries</span>
             </div>
           </div>
         </div>
@@ -358,7 +358,7 @@ const CSS = `
 .bd-grid2{display:grid;grid-template-columns:1fr 1fr;gap:6vw;}
 @media(max-width:820px){.bd-grid2{grid-template-columns:1fr;}}
 .bd-sw{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.bd-sw i{display:block;height:74px;border-radius:2px;}
+.bd-sw i{display:block;height:74px;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(128,128,128,.45);}
 .bd-sw b{display:block;margin-top:8px;font-size:12px;font-weight:500;}
 .bd-sw span{font-size:10px;letter-spacing:.12em;opacity:.6;}
 .bd-note{margin-top:16px;font-size:13px;line-height:1.6;opacity:.75;max-width:44ch;}
@@ -402,7 +402,7 @@ const CSS = `
 .bd-b .bd-name{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.04em;color:#e6e2d6;}
 .bd-b .bd-lede{opacity:.7;}
 .bd-b .bd-sw span,.bd-b .bd-sw b{color:#e6e2d6;}
-.bd-b-hero{position:relative;background:#0f1410;padding:6vh 0 0;overflow:hidden;}
+.bd-b-hero{position:relative;background:#0f1410;padding:5vh 4% 0;overflow:hidden;}
 .bd-b-hero__bands{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);}
 .bd-b-hero__bands i:nth-child(1){background:#c9532a;opacity:.16;}
 .bd-b-hero__bands i:nth-child(2){background:#e0a020;opacity:.14;}
@@ -410,7 +410,7 @@ const CSS = `
 .bd-b-hero__bands i:nth-child(4){background:#59a66c;opacity:.14;}
 .bd-b-hero h3{position:relative;font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.05em;
   font-size:clamp(3.4rem,15vw,12rem);line-height:.82;margin:0;color:#e6e2d6;}
-.bd-b-hero__plate{position:relative;margin:-6% 0 0 auto;width:min(52%,520px);aspect-ratio:4/5;overflow:hidden;
+.bd-b-hero__plate{position:relative;margin:-8% 0 0 auto;width:min(46%,440px);aspect-ratio:4/5;overflow:hidden;
   border:2px solid #e0a020;}
 .bd-b-hero__plate img{filter:contrast(1.25) saturate(1.15);animation:bd-slowzoom 40s ease-in-out infinite alternate;}
 .bd-b-hero__sub{position:relative;max-width:34ch;margin:-8% 0 6vh;font-size:15px;line-height:1.6;color:#cfd6c8;}
@@ -426,7 +426,7 @@ const CSS = `
 .bd-ig--b img{filter:contrast(1.15);}
 .bd-ig--b b{position:absolute;left:6%;bottom:12%;font-family:'Space Grotesk',sans-serif;font-weight:700;
   font-size:clamp(2rem,7vw,3.4rem);line-height:.86;letter-spacing:-.04em;color:#e0a020;}
-.bd-ig--b span{position:absolute;left:6%;top:6%;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e6e2d6;}
+.bd-ig--b span{position:absolute;left:6%;top:6%;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#e6e2d6;background:rgba(15,20,16,.75);padding:6px 10px;}
 
 /* ── 03 Wet Mount ── */
 .bd-c{background:#efe7dd;}
