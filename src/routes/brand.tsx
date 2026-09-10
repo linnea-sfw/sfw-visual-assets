@@ -507,10 +507,10 @@ const CSS = `
 .bd-p-plate{position:relative;aspect-ratio:4/3;overflow:hidden;background:#efe9dc;isolation:isolate;}
 .bd-p-plate--big{aspect-ratio:5/4;}
 .bd-p-pass{position:absolute;inset:0;isolation:isolate;mix-blend-mode:multiply;}
-.bd-p-pass img{mix-blend-mode:screen;filter:grayscale(1) contrast(1.1) brightness(1.05);}
-.bd-p-pass--a{background:#1f6f6a;}
-.bd-p-pass--b{background:#5b3a7e;translate:-4px 3px;}
-.bd-p-pass--c{background:#d2622a;translate:5px -3px;}
+.bd-p-pass img{mix-blend-mode:screen;filter:grayscale(1) contrast(1.3) brightness(1.18);}
+.bd-p-pass--a{background:#1f6f6a;opacity:.62;}
+.bd-p-pass--b{background:#5b3a7e;opacity:.72;translate:-11px 8px;}
+.bd-p-pass--c{background:#d2622a;opacity:.78;translate:10px -7px;}
 .bd-p-pass--move{animation:bd-reg 32s ease-in-out infinite alternate;}
 .bd-p-pass--move2{animation:bd-reg2 46s ease-in-out infinite alternate;}
 .bd-p-txt h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em;
@@ -576,8 +576,8 @@ const CSS = `
 
 @keyframes bd-approach{0%{transform:scale(1);}100%{transform:scale(1.07);}}
 @keyframes bd-rake{0%{transform:translate3d(-70%,0,0);}100%{transform:translate3d(70%,0,0);}}
-@keyframes bd-reg{0%{translate:-6px 4px;}100%{translate:2px -3px;}}
-@keyframes bd-reg2{0%{translate:7px -4px;}100%{translate:-3px 4px;}}
+@keyframes bd-reg{0%{translate:-14px 10px;}100%{translate:-4px 2px;}}
+@keyframes bd-reg2{0%{translate:13px -9px;}100%{translate:3px -1px;}}
 @keyframes bd-travel{0%{transform:scale(2.2) translate3d(-4%,3%,0);}100%{transform:scale(2.2) translate3d(4%,-4%,0);}}
 @media(prefers-reduced-motion:reduce){.bd *{animation:none !important;}}
 `;
