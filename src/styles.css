@@ -834,7 +834,7 @@ svg[data-tone="gold"] {
   width: 100%;
   height: auto;
 }
-.hero > * {
+.hero > .hero__grid {
   position: relative;
   z-index: 1;
 }
