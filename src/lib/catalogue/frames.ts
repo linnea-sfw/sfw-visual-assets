@@ -242,7 +242,7 @@ B.push({
 .sfw-f13 p{font-size:16px;line-height:1.6;margin:0;color:${C.body};}
 </style>
 <section class="sfw-f13">
-  <div class="cut"><img src="/img/cutout-subject.png" alt="${CAP}"><p class="note">${CAP}</p></div>
+  <div class="cut"><img src="${IMG.compost}" alt="${CAP}"><p class="note">${CAP}</p></div>
   <div><h3>${CAP}</h3><p>${CAP}</p></div>
 </section>`),
 });

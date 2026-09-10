@@ -295,9 +295,248 @@ function Playground() {
         </div>
       </section>
 
-      {/* 14 — closing deep field */}
+      {/* 14 — mood one: deep green and harvest gold */}
+      <section className="pg-screen pg-mood pg-mood--gold">
+        <Mark n="Plate XIV" right="Mood one · green & gold" />
+        <h2>
+          Deep green,
+          <br />
+          <em>struck in gold</em>
+        </h2>
+        <p style={{ marginTop: 20 }}>
+          The evening register. Classic green pushed to its darkest, harvest gold used only as a
+          keyline and a word.
+        </p>
+        <div className="pg-mood__row">
+          <figure className="pg-drift">
+            <img src={PH.vineyardTractor} alt={CAPTION} loading="lazy" />
+          </figure>
+          <figure>
+            <img src={PH.shovelBag} alt={CAPTION} loading="lazy" />
+          </figure>
+          <figure className="pg-drift-slow">
+            <img src={PH.treePlanting2} alt={CAPTION} loading="lazy" />
+          </figure>
+        </div>
+        <div className="swatches">
+          {["#22371f", "#156826", "#59a66c", "#c9a227", "#f4f1ea"].map((c) => (
+            <i key={c} style={{ background: c }} />
+          ))}
+        </div>
+      </section>
+
+      {/* 15 — mood two: soil brown and cream */}
+      <section className="pg-screen pg-mood pg-mood--brown">
+        <Mark n="Plate XV" right="Mood two · brown & cream" />
+        <div className="pg-dip">
+          <figure>
+            <img src={PH.redSoilHand} alt={CAPTION} loading="lazy" />
+          </figure>
+          <div className="pg-dip__rule" />
+          <div>
+            <h2>
+              Brown ground,
+              <br />
+              <em>cream paper</em>
+            </h2>
+            <p style={{ marginTop: 18 }}>
+              Warm and printed. Tan carries the rules, cream carries the words, and the photograph
+              keeps its own colour.
+            </p>
+            <div className="pg-hair" style={{ marginTop: 26 }} />
+            <span className="pg-cap">{CAPTION}</span>
+          </div>
+        </div>
+        <div className="swatches">
+          {["#4f3433", "#c89b7b", "#f4f1ea", "#156826", "#22371f"].map((c) => (
+            <i key={c} style={{ background: c }} />
+          ))}
+        </div>
+      </section>
+
+      {/* 16 — mood three: cream, education blue, one purple */}
+      <section className="pg-screen pg-mood pg-mood--blue">
+        <Mark n="Plate XVI" right="Mood three · cream & blue" />
+        <h2>
+          Daylight,
+          <br />
+          teaching blue
+        </h2>
+        <div className="pg-mood__row">
+          <figure>
+            <img src={PH.studentCompostMoving} alt={CAPTION} loading="lazy" />
+          </figure>
+          <figure className="pg-drift">
+            <img src={PH.wildSoilsEvent} alt={CAPTION} loading="lazy" />
+          </figure>
+          <figure>
+            <img src={PH.elaineTeaching} alt={CAPTION} loading="lazy" />
+          </figure>
+        </div>
+        <div className="pg-legacy">
+          <b>Legacy — Dr. Elaine Ingham only</b>
+          <p style={{ marginTop: 8 }}>
+            The purple sits on her material and nowhere else: one rule, one frame, never a wash.
+          </p>
+        </div>
+        <div className="swatches">
+          {["#f4f1ea", "#3780b8", "#156826", "#6b4c7a", "#4f3433"].map((c) => (
+            <i key={c} style={{ background: c }} />
+          ))}
+        </div>
+      </section>
+
+      {/* 17 — filmstrip bleeding both edges */}
+      <section className="pg-screen pg-screen--flush">
+        <div style={{ padding: "0 var(--gut) 24px" }}>
+          <Mark n="Plate XVII" right="Filmstrip" />
+          <h2 style={{ fontSize: "clamp(1.8rem,4vw,3.4rem)" }}>Everything on one roll</h2>
+        </div>
+        <div className="pg-strip">
+          {[
+            PH.mulchBucket,
+            PH.handScooping,
+            PH.treePlanting3,
+            PH.vineyardCrew,
+            PH.samplingKit,
+            PH.panchamanaGarden,
+            PH.dirtyHands,
+            PH.ranchAgro2,
+            PH.planting,
+            PH.soilClose4,
+          ].map((src, i) => (
+            <figure key={src + i}>
+              <img src={src} alt={CAPTION} loading="lazy" />
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* 18 — index with photographs in the margin */}
+      <section className="pg-screen">
+        <Mark n="Plate XVIII" right="Index" />
+        <div className="pg-index">
+          {[
+            [PH.handWorm, "A worm in a wet hand", "Field"],
+            [PH.looseSoil, "Loose soil, falling", "Hands"],
+            [PH.testTubes, "Tubes with samples", "Lab"],
+            [PH.ranchRows, "Rows under repair", "Land"],
+            [PH.elaineSampleBag, "The sample bag", "Legacy"],
+            [PH.studentCompostSqueeze, "The squeeze test", "Teaching"],
+            [PH.hyphaeInSoil, "Hyphae in the crumb", "Soil"],
+          ].map(([src, t, tag]) => (
+            <div className="pg-index__row" key={t}>
+              <figure>
+                <img src={src} alt={CAPTION} loading="lazy" />
+              </figure>
+              <h3>{t}</h3>
+              <span>{tag}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 19 — diptych in conversation */}
+      <section className="pg-screen">
+        <Mark n="Plate XIX" right="Diptych" />
+        <div className="pg-dip">
+          <figure className="pg-drift">
+            <img src={PH.fistDrySoil} alt={CAPTION} loading="lazy" />
+          </figure>
+          <div className="pg-dip__rule" />
+          <figure className="pg-drift-slow">
+            <img src={PH.handCompost} alt={CAPTION} loading="lazy" />
+          </figure>
+        </div>
+        <p className="pg-cap" style={{ textAlign: "center", marginInline: "auto", marginTop: 22 }}>
+          {CAPTION}
+        </p>
+      </section>
+
+      {/* 20 — one photograph carries the screen */}
+      <section className="pg-screen pg-screen--colossal">
+        <div className="pg-colossal pg-drift-slow">
+          <img src={PH.ranchAerial2} alt={CAPTION} loading="lazy" />
+        </div>
+        <Mark n="Plate XX" right="Colossal" />
+        <h2>Ten thousand acres, one frame</h2>
+        <p className="pg-cap">{CAPTION}</p>
+      </section>
+
+      {/* 21 — strata, each band a different photograph */}
+      <section className="pg-screen">
+        <Mark n="Plate XXI" right="Strata" />
+        <div className="pg-strata">
+          {[
+            [PH.panchamanaGarden, "Litter"],
+            [PH.handRootsFungi, "Surface"],
+            [PH.soilClose3, "Rooting"],
+            [PH.hyphaeInSoil, "Weathering"],
+            [PH.fistDrySoil, "Parent"],
+          ].map(([src, l]) => (
+            <div key={l}>
+              <img src={src} alt={CAPTION} loading="lazy" />
+              <b>{l}</b>
+            </div>
+          ))}
+        </div>
+        <p className="pg-cap">{CAPTION}</p>
+      </section>
+
+      {/* 22 — a sequence */}
+      <section className="pg-screen">
+        <Mark n="Plate XXII" right="Sequence" />
+        <div className="pg-seq">
+          {[
+            [PH.treePlanting1, "i"],
+            [PH.treePlanting2, "ii"],
+            [PH.treePlanting3, "iii"],
+            [PH.panchamanaGarden, "iv"],
+          ].map(([src, n]) => (
+            <figure key={n}>
+              <div>
+                <img src={src} alt={CAPTION} loading="lazy" />
+              </div>
+              <figcaption>
+                {n} · {CAPTION}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className="pg-hair" style={{ marginTop: 30 }} />
+      </section>
+
+      {/* 23 — ledger grid with a gold column */}
+      <section className="pg-screen">
+        <Mark n="Plate XXIII" right="Ledger" />
+        <div className="pg-ledger">
+          {[
+            [PH.elaineTalking, "01"],
+            [PH.groupPlanting, "02"],
+            [PH.vineyardFungus, "03"],
+            [PH.sampleTube, "04"],
+            [PH.ranchAgro8, "05"],
+            [PH.worm, "06"],
+            [PH.elainePortrait, "07"],
+            [PH.studentCompostMoving, "08"],
+            [PH.handsRoots, "09"],
+          ].map(([src, n]) => (
+            <figure key={n}>
+              <div>
+                <img src={src} alt={CAPTION} loading="lazy" />
+              </div>
+              <figcaption>
+                <span>{n}</span>
+                <span>{CAPTION}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      {/* 24 — closing deep field */}
       <section className="pg-screen pg-screen--deep">
-        <Mark n="Plate XIV" right="End of sheet" />
+        <Mark n="Plate XXIV" right="End of sheet" />
         <div style={{ display: "grid", gap: 28, justifyItems: "center", textAlign: "center" }}>
           <Hyphae seed={909} width={520} height={300} from="bottom" draw tone="moss" />
           <h2 style={{ fontSize: "clamp(2rem,7vw,6rem)" }}>Grown, not designed</h2>
