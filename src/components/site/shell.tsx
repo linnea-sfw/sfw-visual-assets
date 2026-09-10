@@ -174,7 +174,13 @@ export function Fig({
 }) {
   return (
     <figure className="fig">
-      <Photo src={src} ar={ar} className={className} drift={drift} alt={alt} />
+      <Photo
+        src={src}
+        ar={ar ?? "ar-4x3"}
+        className={className ?? ""}
+        drift={drift ?? false}
+        alt={alt}
+      />
       <figcaption className="cap">{caption}</figcaption>
     </figure>
   );
