@@ -820,7 +820,8 @@ const CSS = `
 
 /* ---------- 03 FIELD INDEX ---------- */
 .ix-hero{display:grid;grid-template-columns:1.25fr 1fr;gap:0;border:1px solid var(--ink);}
-.ix-hero__im{position:relative;overflow:hidden;min-height:520px;}
+.ix-hero__im{position:relative;overflow:hidden;min-height:520px;background:#111;}
+.ix-hero__im img{position:absolute;inset:0;width:100%;height:100%;}
 .ix-hero__crop{position:absolute;inset:0;box-shadow:inset 0 0 0 14px #fff;}
 .ix-hero__t{padding:44px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--ink);}
 .ix-no{font-family:Montserrat,sans-serif;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
