@@ -11,9 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CommunityRouteImport } from './routes/community'
+import { Route as DonateRouteImport } from './routes/donate'
 import { Route as ElaineInghamRouteImport } from './routes/elaine-ingham'
 import { Route as LearnRouteImport } from './routes/learn'
 import { Route as LibraryRouteImport } from './routes/library'
+import { Route as NowRouteImport } from './routes/now'
 import { Route as ScienceRouteImport } from './routes/science'
 import { Route as WorkshopsRouteImport } from './routes/workshops'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
@@ -29,6 +32,16 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DonateRoute = DonateRouteImport.update({
+  id: '/donate',
+  path: '/donate',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ElaineInghamRoute = ElaineInghamRouteImport.update({
   id: '/elaine-ingham',
   path: '/elaine-ingham',
@@ -42,6 +55,11 @@ const LearnRoute = LearnRouteImport.update({
 const LibraryRoute = LibraryRouteImport.update({
   id: '/library',
   path: '/library',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NowRoute = NowRouteImport.update({
+  id: '/now',
+  path: '/now',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ScienceRoute = ScienceRouteImport.update({
@@ -69,9 +87,12 @@ const ProjectsRanchoCacachilasRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
+  '/now': typeof NowRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -80,9 +101,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
+  '/now': typeof NowRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -92,9 +116,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/community': typeof CommunityRoute
+  '/donate': typeof DonateRoute
   '/elaine-ingham': typeof ElaineInghamRoute
   '/learn': typeof LearnRoute
   '/library': typeof LibraryRoute
+  '/now': typeof NowRoute
   '/science': typeof ScienceRoute
   '/workshops': typeof WorkshopsRoute
   '/projects/rancho-cacachilas': typeof ProjectsRanchoCacachilasRoute
@@ -105,9 +132,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/community'
+    | '/donate'
     | '/elaine-ingham'
     | '/learn'
     | '/library'
+    | '/now'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -116,9 +146,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/community'
+    | '/donate'
     | '/elaine-ingham'
     | '/learn'
     | '/library'
+    | '/now'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -127,9 +160,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/community'
+    | '/donate'
     | '/elaine-ingham'
     | '/learn'
     | '/library'
+    | '/now'
     | '/science'
     | '/workshops'
     | '/projects/rancho-cacachilas'
@@ -139,9 +175,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CommunityRoute: typeof CommunityRoute
+  DonateRoute: typeof DonateRoute
   ElaineInghamRoute: typeof ElaineInghamRoute
   LearnRoute: typeof LearnRoute
   LibraryRoute: typeof LibraryRoute
+  NowRoute: typeof NowRoute
   ScienceRoute: typeof ScienceRoute
   WorkshopsRoute: typeof WorkshopsRoute
   ProjectsRanchoCacachilasRoute: typeof ProjectsRanchoCacachilasRoute
@@ -164,6 +203,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/donate': {
+      id: '/donate'
+      path: '/donate'
+      fullPath: '/donate'
+      preLoaderRoute: typeof DonateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/elaine-ingham': {
       id: '/elaine-ingham'
       path: '/elaine-ingham'
@@ -183,6 +236,13 @@ declare module '@tanstack/react-router' {
       path: '/library'
       fullPath: '/library'
       preLoaderRoute: typeof LibraryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/now': {
+      id: '/now'
+      path: '/now'
+      fullPath: '/now'
+      preLoaderRoute: typeof NowRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/science': {
@@ -219,9 +279,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CommunityRoute: CommunityRoute,
+  DonateRoute: DonateRoute,
   ElaineInghamRoute: ElaineInghamRoute,
   LearnRoute: LearnRoute,
   LibraryRoute: LibraryRoute,
+  NowRoute: NowRoute,
   ScienceRoute: ScienceRoute,
   WorkshopsRoute: WorkshopsRoute,
   ProjectsRanchoCacachilasRoute: ProjectsRanchoCacachilasRoute,
