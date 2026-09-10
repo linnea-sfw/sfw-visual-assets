@@ -182,19 +182,9 @@ function Brand() {
         <div className="bd-label">Website hero</div>
         <div className="bd-p-hero">
           <div className="bd-p-plate bd-p-plate--big">
-            <img className="bd-p-i bd-p-i--a" src={IMG.fungi} alt="Fungi growing in vineyard soil" />
-            <img
-              className="bd-p-i bd-p-i--b"
-              src={IMG.fungi}
-              alt=""
-              aria-hidden="true"
-            />
-            <img
-              className="bd-p-i bd-p-i--c"
-              src={IMG.fungi}
-              alt=""
-              aria-hidden="true"
-            />
+            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.fungi} alt="Fungi growing in vineyard soil" /></span>
+            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.fungi} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.fungi} alt="" aria-hidden="true" /></span>
           </div>
           <div className="bd-p-txt">
             <h3>
@@ -217,19 +207,19 @@ function Brand() {
 
         <div className="bd-p-row">
           <div className="bd-p-plate">
-            <img className="bd-p-i bd-p-i--a" src={IMG.roots} alt="Roots and fungal threads" />
-            <img className="bd-p-i bd-p-i--b" src={IMG.roots} alt="" aria-hidden="true" />
-            <img className="bd-p-i bd-p-i--c" src={IMG.roots} alt="" aria-hidden="true" />
+            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.roots} alt="Roots and fungal threads" /></span>
+            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.roots} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.roots} alt="" aria-hidden="true" /></span>
           </div>
           <div className="bd-p-plate">
-            <img className="bd-p-i bd-p-i--a" src={IMG.york1} alt="Soil surface with residue" />
-            <img className="bd-p-i bd-p-i--b" src={IMG.york1} alt="" aria-hidden="true" />
-            <img className="bd-p-i bd-p-i--c" src={IMG.york1} alt="" aria-hidden="true" />
+            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york1} alt="Soil surface with residue" /></span>
+            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.york1} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.york1} alt="" aria-hidden="true" /></span>
           </div>
           <div className="bd-p-plate">
-            <img className="bd-p-i bd-p-i--a" src={IMG.spores} alt="Spores in suspension" />
-            <img className="bd-p-i bd-p-i--b" src={IMG.spores} alt="" aria-hidden="true" />
-            <img className="bd-p-i bd-p-i--c" src={IMG.spores} alt="" aria-hidden="true" />
+            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.spores} alt="Spores in suspension" /></span>
+            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.spores} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.spores} alt="" aria-hidden="true" /></span>
           </div>
         </div>
 
@@ -266,9 +256,9 @@ function Brand() {
           <div>
             <div className="bd-label">Live animation · registration drift</div>
             <div className="bd-p-plate bd-p-plate--anim">
-              <img className="bd-p-i bd-p-i--a" src={IMG.york3} alt="A soil profile in section" />
-              <img className="bd-p-i bd-p-i--b bd-p-i--move" src={IMG.york3} alt="" aria-hidden="true" />
-              <img className="bd-p-i bd-p-i--c bd-p-i--move2" src={IMG.york3} alt="" aria-hidden="true" />
+              <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york3} alt="A soil profile in section" /></span>
+              <span className="bd-p-pass bd-p-pass--b bd-p-pass--move"><img src={IMG.york3} alt="" aria-hidden="true" /></span>
+              <span className="bd-p-pass bd-p-pass--c bd-p-pass--move2"><img src={IMG.york3} alt="" aria-hidden="true" /></span>
               <figcaption>The passes creep apart and back. 32s and 46s.</figcaption>
             </div>
           </div>
@@ -276,9 +266,9 @@ function Brand() {
             <div className="bd-label">Instagram</div>
             <div className="bd-ig bd-ig--p">
               <div className="bd-p-plate">
-                <img className="bd-p-i bd-p-i--a" src={IMG.york2} alt="Fungal threads in soil" />
-                <img className="bd-p-i bd-p-i--b bd-p-i--move" src={IMG.york2} alt="" aria-hidden="true" />
-                <img className="bd-p-i bd-p-i--c" src={IMG.york2} alt="" aria-hidden="true" />
+                <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york2} alt="Fungal threads in soil" /></span>
+                <span className="bd-p-pass bd-p-pass--b bd-p-pass--move"><img src={IMG.york2} alt="" aria-hidden="true" /></span>
+                <span className="bd-p-pass bd-p-pass--c"><img src={IMG.york2} alt="" aria-hidden="true" /></span>
               </div>
               <b>Out of register, on purpose</b>
               <span>Soil Food Web Foundation</span>
@@ -322,11 +312,11 @@ function Brand() {
               hues taken from it, printed like a set of pigment chips.
             </p>
             <div className="bd-g-scale">
-              <span>Full frame</span>
+              <span>Actual photograph</span>
               <div className="bd-g-tiny">
                 <img src={IMG.red} alt="The same photograph, uncropped and small" />
               </div>
-              <span>The crop above is a thumbnail of it</span>
+              <span>Full frame, for scale</span>
             </div>
           </div>
         </div>
@@ -516,15 +506,13 @@ const CSS = `
 @media(max-width:860px){.bd-p-hero{grid-template-columns:1fr;}}
 .bd-p-plate{position:relative;aspect-ratio:4/3;overflow:hidden;background:#efe9dc;isolation:isolate;}
 .bd-p-plate--big{aspect-ratio:5/4;}
-.bd-p-i{position:absolute;inset:0;}
-.bd-p-i--a{filter:grayscale(1) sepia(1) hue-rotate(150deg) saturate(2.4) brightness(1.42) contrast(.95);
-  mix-blend-mode:multiply;}
-.bd-p-i--b{filter:grayscale(1) sepia(1) hue-rotate(228deg) saturate(2.6) brightness(1.46) contrast(.92);
-  mix-blend-mode:multiply;translate:-4px 3px;}
-.bd-p-i--c{filter:grayscale(1) sepia(1) hue-rotate(-14deg) saturate(2.8) brightness(1.44) contrast(.92);
-  mix-blend-mode:multiply;translate:5px -3px;}
-.bd-p-i--move{animation:bd-reg 32s ease-in-out infinite alternate;}
-.bd-p-i--move2{animation:bd-reg2 46s ease-in-out infinite alternate;}
+.bd-p-pass{position:absolute;inset:0;isolation:isolate;mix-blend-mode:multiply;}
+.bd-p-pass img{mix-blend-mode:screen;filter:grayscale(1) contrast(1.1) brightness(1.05);}
+.bd-p-pass--a{background:#1f6f6a;}
+.bd-p-pass--b{background:#5b3a7e;translate:-4px 3px;}
+.bd-p-pass--c{background:#d2622a;translate:5px -3px;}
+.bd-p-pass--move{animation:bd-reg 32s ease-in-out infinite alternate;}
+.bd-p-pass--move2{animation:bd-reg2 46s ease-in-out infinite alternate;}
 .bd-p-txt h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em;
   font-size:clamp(2rem,4.6vw,3.6rem);line-height:.98;margin:0;}
 .bd-p-txt p{margin:20px 0 0;max-width:38ch;line-height:1.65;opacity:.8;}
