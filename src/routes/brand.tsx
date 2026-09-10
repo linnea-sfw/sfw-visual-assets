@@ -173,8 +173,7 @@ function Brand() {
         </div>
         <h2 className="bd-name">Three Passes</h2>
         <p className="bd-lede">
-          Every photograph is printed three times, in three inks taken from things that actually
-          grow: fungal violet, slug orange, lichen teal. The passes sit a millimetre out of
+          Every photograph is printed as a single ink pull, in inks taken from things that actually grow: fungal violet, slug orange, lichen teal. The passes sit a millimetre out of
           register, so the image is never quite one image — it shimmers at the edges the way a
           living thing does under a lens. Nothing is drawn. The strangeness comes from the printing.
         </p>
@@ -182,9 +181,7 @@ function Brand() {
         <div className="bd-label">Website hero</div>
         <div className="bd-p-hero">
           <div className="bd-p-plate bd-p-plate--big">
-            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.fungi} alt="Fungi growing in vineyard soil" /></span>
-            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.fungi} alt="" aria-hidden="true" /></span>
-            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.fungi} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--b bd-p-pass--flat"><img src={IMG.fungi} alt="Fungi growing in vineyard soil" /></span>
           </div>
           <div className="bd-p-txt">
             <h3>
@@ -207,19 +204,13 @@ function Brand() {
 
         <div className="bd-p-row">
           <div className="bd-p-plate">
-            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.roots} alt="Roots and fungal threads" /></span>
-            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.roots} alt="" aria-hidden="true" /></span>
-            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.roots} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--c bd-p-pass--flat"><img src={IMG.roots} alt="Roots and fungal threads" /></span>
           </div>
           <div className="bd-p-plate">
-            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york1} alt="Soil surface with residue" /></span>
-            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.york1} alt="" aria-hidden="true" /></span>
-            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.york1} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--a bd-p-pass--flat"><img src={IMG.york1} alt="Soil surface with residue" /></span>
           </div>
           <div className="bd-p-plate">
-            <span className="bd-p-pass bd-p-pass--a"><img src={IMG.spores} alt="Spores in suspension" /></span>
-            <span className="bd-p-pass bd-p-pass--b"><img src={IMG.spores} alt="" aria-hidden="true" /></span>
-            <span className="bd-p-pass bd-p-pass--c"><img src={IMG.spores} alt="" aria-hidden="true" /></span>
+            <span className="bd-p-pass bd-p-pass--b bd-p-pass--flat"><img src={IMG.spores} alt="Spores in suspension" /></span>
           </div>
         </div>
 
@@ -256,9 +247,8 @@ function Brand() {
           <div>
             <div className="bd-label">Live animation · registration drift</div>
             <div className="bd-p-plate bd-p-plate--anim">
-              <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york3} alt="A soil profile in section" /></span>
+              <span className="bd-p-pass bd-p-pass--c bd-p-pass--flat"><img src={IMG.york3} alt="A soil profile in section" /></span>
               <span className="bd-p-pass bd-p-pass--b bd-p-pass--move"><img src={IMG.york3} alt="" aria-hidden="true" /></span>
-              <span className="bd-p-pass bd-p-pass--c bd-p-pass--move2"><img src={IMG.york3} alt="" aria-hidden="true" /></span>
               <figcaption>The passes creep apart and back. 32s and 46s.</figcaption>
             </div>
           </div>
@@ -266,9 +256,8 @@ function Brand() {
             <div className="bd-label">Instagram</div>
             <div className="bd-ig bd-ig--p">
               <div className="bd-p-plate">
-                <span className="bd-p-pass bd-p-pass--a"><img src={IMG.york2} alt="Fungal threads in soil" /></span>
-                <span className="bd-p-pass bd-p-pass--b bd-p-pass--move"><img src={IMG.york2} alt="" aria-hidden="true" /></span>
-                <span className="bd-p-pass bd-p-pass--c"><img src={IMG.york2} alt="" aria-hidden="true" /></span>
+                <span className="bd-p-pass bd-p-pass--a bd-p-pass--flat"><img src={IMG.york2} alt="Fungal threads in soil" /></span>
+                <span className="bd-p-pass bd-p-pass--c bd-p-pass--move"><img src={IMG.york2} alt="" aria-hidden="true" /></span>
               </div>
               <b>Out of register, on purpose</b>
               <span>Soil Food Web Foundation</span>
@@ -507,10 +496,12 @@ const CSS = `
 .bd-p-plate{position:relative;aspect-ratio:4/3;overflow:hidden;background:#efe9dc;isolation:isolate;}
 .bd-p-plate--big{aspect-ratio:5/4;}
 .bd-p-pass{position:absolute;inset:0;isolation:isolate;mix-blend-mode:multiply;}
-.bd-p-pass img{mix-blend-mode:screen;filter:grayscale(1) contrast(1.3) brightness(1.18);}
-.bd-p-pass--a{background:#1f6f6a;opacity:.62;}
-.bd-p-pass--b{background:#5b3a7e;opacity:.72;translate:-11px 8px;}
-.bd-p-pass--c{background:#d2622a;opacity:.78;translate:10px -7px;}
+.bd-p-pass img{mix-blend-mode:screen;filter:grayscale(1) contrast(1.22) brightness(1.06);}
+.bd-p-pass--a{background:#1f6f6a;}
+.bd-p-pass--b{background:#5b3a7e;translate:-12px 9px;}
+.bd-p-pass--c{background:#d2622a;translate:11px -8px;}
+.bd-p-pass--flat{translate:none;opacity:1;}
+.bd-p-pass--b.bd-p-pass--move,.bd-p-pass--c.bd-p-pass--move{opacity:.8;}
 .bd-p-pass--move{animation:bd-reg 32s ease-in-out infinite alternate;}
 .bd-p-pass--move2{animation:bd-reg2 46s ease-in-out infinite alternate;}
 .bd-p-txt h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.03em;
