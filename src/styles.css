@@ -162,6 +162,10 @@
   --sage: #9aa885;
   --rule: #d2d5c7;
   --deep-rule: rgba(247, 247, 242, 0.22);
+  --tan: #c89b7b;
+  --purple: #6b4c7a;
+  --brown: #4f3433;
+  --cream: #f4f1ea;
 
   --s-1: 4px;
   --s-2: 8px;
@@ -1640,4 +1644,453 @@ svg[data-tone="gold"] {
   .pg-breathe {
     animation: none;
   }
+}
+
+/* ================= playground, second pass ================= */
+
+/* the type must actually be cut from the photograph */
+.pg .pg-type {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.pg .pg-type--ring {
+  -webkit-text-stroke: 1.5px rgba(21, 104, 38, 0.5);
+}
+
+/* overlap, retuned: photographs and plates sharing one field */
+.pg-lap {
+  min-height: min(84vh, 900px);
+}
+.pg-lap__a {
+  left: 0;
+  top: 4%;
+  width: 40%;
+  aspect-ratio: 4/5;
+}
+.pg-lap__b {
+  right: 8%;
+  top: 0;
+  width: 34%;
+  aspect-ratio: 1;
+}
+.pg-lap__c {
+  left: 34%;
+  bottom: 2%;
+  width: 40%;
+  aspect-ratio: 4/3;
+}
+.pg-lap__p1 {
+  left: 24%;
+  top: -6%;
+  width: 26%;
+  opacity: 0.7;
+}
+.pg-lap__p2 {
+  right: 2%;
+  bottom: 6%;
+  width: 26%;
+  opacity: 0.9;
+}
+
+/* ---- three colour moods ---- */
+.pg-mood {
+  position: relative;
+}
+.pg-mood h2 {
+  font-size: clamp(2.4rem, 7vw, 6rem);
+}
+.pg-mood .swatches {
+  display: flex;
+  gap: 0;
+  margin-top: var(--s-5);
+}
+.pg-mood .swatches i {
+  height: 46px;
+  flex: 1;
+}
+.pg-mood__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(12px, 2vw, 28px);
+  margin-top: clamp(24px, 4vw, 52px);
+}
+.pg-mood__row figure {
+  margin: 0;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+@media (max-width: 760px) {
+  .pg-mood__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* mood A — deep green + harvest gold */
+.pg-mood--gold {
+  background: var(--deep);
+  color: #efeade;
+}
+.pg-mood--gold h2,
+.pg-mood--gold .pg-mark {
+  color: var(--gold);
+}
+.pg-mood--gold em {
+  font-family: var(--ff-s);
+  font-style: italic;
+  color: var(--gold);
+}
+.pg-mood--gold .pg-mood__row figure {
+  outline: 1px solid rgba(201, 162, 39, 0.55);
+  outline-offset: -1px;
+}
+.pg-mood--gold p,
+.pg-mood--gold .pg-cap {
+  color: rgba(244, 241, 234, 0.7);
+}
+
+/* mood B — soil brown + cream */
+.pg-mood--brown {
+  background: var(--brown);
+  color: var(--cream);
+}
+.pg-mood--brown h2 {
+  color: var(--cream);
+}
+.pg-mood--brown .pg-mark {
+  color: var(--tan);
+}
+.pg-mood--brown p,
+.pg-mood--brown .pg-cap {
+  color: rgba(244, 241, 234, 0.72);
+}
+.pg-mood--brown em {
+  font-family: var(--ff-s);
+  font-style: italic;
+  color: var(--tan);
+}
+.pg-mood--brown .pg-hair {
+  background: rgba(200, 155, 123, 0.5);
+}
+
+/* mood C — cream, education blue, one purple accent */
+.pg-mood--blue {
+  background: #fbfaf6;
+}
+.pg-mood--blue h2 {
+  color: var(--blue);
+}
+.pg-mood--blue .pg-mark {
+  color: var(--blue);
+}
+.pg-mood--blue .pg-hair {
+  background: rgba(55, 128, 184, 0.4);
+}
+.pg-mood--blue .pg-mood__row figure:last-child {
+  outline: 6px solid var(--purple);
+  outline-offset: -6px;
+}
+.pg-legacy {
+  margin-top: clamp(24px, 4vw, 48px);
+  border-left: 3px solid var(--purple);
+  padding-left: var(--s-4);
+}
+.pg-legacy b {
+  font-family: var(--ff-h);
+  font-size: var(--t-fine);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+/* ---- filmstrip that bleeds both edges ---- */
+.pg-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(150px, 17vw, 260px);
+  gap: 2px;
+  width: 100vw;
+  margin-left: calc(var(--gut) * -1);
+  overflow: hidden;
+  background: var(--olive);
+  padding: 2px 0;
+}
+.pg-strip figure {
+  margin: 0;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: var(--paper);
+}
+.pg-strip figure:nth-child(3n) {
+  align-self: end;
+  aspect-ratio: 1;
+}
+
+/* ---- index list with photographs in the margin ---- */
+.pg-index {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+.pg-index__row {
+  display: grid;
+  grid-template-columns: 84px 1fr 120px;
+  gap: clamp(14px, 3vw, 40px);
+  align-items: center;
+  padding: clamp(10px, 1.6vw, 20px) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.pg-index__row figure {
+  margin: 0;
+  width: 84px;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.pg-index__row h3 {
+  font-family: var(--ff-s);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.6vw, 2.1rem);
+  letter-spacing: -0.01em;
+}
+.pg-index__row:nth-child(even) h3 {
+  font-style: italic;
+  color: var(--olive);
+}
+.pg-index__row span {
+  justify-self: end;
+  font-family: var(--ff-h);
+  font-size: var(--t-fine);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+/* ---- diptych: two photographs in conversation ---- */
+.pg-dip {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: center;
+  gap: clamp(16px, 4vw, 56px);
+}
+.pg-dip figure {
+  margin: 0;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+}
+.pg-dip figure:last-child img {
+  transform: scaleX(-1);
+}
+.pg-dip__rule {
+  align-self: stretch;
+  background: var(--rule);
+}
+@media (max-width: 760px) {
+  .pg-dip {
+    grid-template-columns: 1fr;
+  }
+  .pg-dip__rule {
+    display: none;
+  }
+}
+
+/* ---- one photograph carrying the whole screen ---- */
+.pg-colossal {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.pg-colossal img {
+  object-position: 50% 42%;
+  transform: scale(1.06);
+}
+.pg-screen--colossal {
+  justify-content: flex-end;
+  color: var(--cream);
+}
+.pg-screen--colossal > * {
+  position: relative;
+  z-index: 2;
+}
+.pg-screen--colossal h2 {
+  color: var(--cream);
+  font-size: clamp(2.4rem, 9vw, 8rem);
+  mix-blend-mode: normal;
+}
+.pg-screen--colossal .pg-cap {
+  color: rgba(244, 241, 234, 0.8);
+}
+.pg-screen--colossal .pg-mark {
+  color: rgba(244, 241, 234, 0.85);
+}
+.pg-screen--colossal .pg-mark span:last-child {
+  color: rgba(244, 241, 234, 0.6);
+}
+
+/* ---- stacked strata, each band a photograph ---- */
+.pg-strata {
+  display: grid;
+  gap: 3px;
+}
+.pg-strata div {
+  overflow: hidden;
+  position: relative;
+}
+.pg-strata div:nth-child(1) {
+  height: clamp(48px, 7vh, 90px);
+}
+.pg-strata div:nth-child(2) {
+  height: clamp(70px, 11vh, 140px);
+}
+.pg-strata div:nth-child(3) {
+  height: clamp(90px, 16vh, 200px);
+}
+.pg-strata div:nth-child(4) {
+  height: clamp(60px, 9vh, 120px);
+}
+.pg-strata div:nth-child(5) {
+  height: clamp(40px, 6vh, 70px);
+}
+.pg-strata b {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-family: var(--ff-h);
+  font-size: var(--t-fine);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  mix-blend-mode: difference;
+}
+
+/* ---- a sequence, numbered like a time series ---- */
+.pg-seq {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 1.6vw, 22px);
+  align-items: end;
+}
+.pg-seq figure {
+  margin: 0;
+}
+.pg-seq figure:nth-child(1) {
+  aspect-ratio: 3/4;
+}
+.pg-seq figure div {
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.pg-seq figure:nth-child(2) div {
+  aspect-ratio: 1;
+}
+.pg-seq figure:nth-child(3) div {
+  aspect-ratio: 4/5;
+}
+.pg-seq figure:nth-child(4) div {
+  aspect-ratio: 3/5;
+}
+.pg-seq figcaption {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--ff-h);
+  font-size: var(--t-fine);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--olive);
+}
+@media (max-width: 760px) {
+  .pg-seq {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---- ledger grid with one gold column ---- */
+.pg-ledger {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--rule);
+}
+.pg-ledger figure {
+  margin: 0;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+.pg-ledger figure > div {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.pg-ledger figcaption {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ff-h);
+  font-size: var(--t-fine);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.pg-ledger figure:nth-child(3n) {
+  background: rgba(201, 162, 39, 0.12);
+}
+.pg-ledger figure:nth-child(5) img {
+  filter: grayscale(1) contrast(1.2);
+}
+@media (max-width: 760px) {
+  .pg-ledger {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* every photograph in the playground fills its frame */
+.pg figure img,
+.pg-strata img,
+.pg-colossal img,
+.pg-index__row img,
+.pg-ledger figure > div img,
+.pg-seq figure div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pg-strip figure:nth-child(3n) {
+  align-self: stretch;
+  aspect-ratio: 2/3;
+}
+.pg-strip figure:nth-child(4n) img {
+  object-position: 50% 30%;
+}
+.pg-colossal {
+  z-index: 0;
+}
+
+.pg-screen--colossal > .pg-colossal {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.pg-screen--colossal {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(40px, 8vh, 120px);
+}
+.pg-screen--colossal h2,
+.pg-screen--colossal .pg-cap,
+.pg-screen--colossal .pg-mark {
+  text-shadow: none;
+}
+.pg-screen--colossal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(34, 55, 31, 0.72), rgba(34, 55, 31, 0) 55%);
+  pointer-events: none;
+}
+
+.pg-strip figure,
+.pg-strip figure:nth-child(3n) {
+  aspect-ratio: auto;
+  height: clamp(300px, 46vh, 560px);
 }
