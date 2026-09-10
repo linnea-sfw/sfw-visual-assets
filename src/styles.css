@@ -2088,3 +2088,9 @@ svg[data-tone="gold"] {
   background: linear-gradient(to top, rgba(34, 55, 31, 0.72), rgba(34, 55, 31, 0) 55%);
   pointer-events: none;
 }
+
+.pg-strip figure,
+.pg-strip figure:nth-child(3n) {
+  aspect-ratio: auto;
+  height: clamp(300px, 46vh, 560px);
+}
